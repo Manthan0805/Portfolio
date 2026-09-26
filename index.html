@@ -6,66 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Manthan Patel | Portfolio</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
+
+
         * {
             box-sizing: border-box;
-            margin: 1px;
-            padding: 1px;
+            margin: 0;
+            padding: 0;
         }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #808080;
             color: #222;
             line-height: 1.6;
+            min-height: 100vh;
         }
+
+
+
         header {
             background-color: #000;
             color: white;
-            min-height: 90px;
-            padding: 15px 40px;
+
+            width: 100%;
+            min-height: 160px;
+
+            padding: 25px 40px;
+
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
+
         header img {
-            width: 90px;
-            height: 90px;
-            border-radius: 100%;
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
             object-fit: cover;
         }
+
         .header-text h1 {
             color: rgb(119, 0, 255);
-            font-size: 32px;
-            margin: 0;
+            font-size: 40px;
+            margin-bottom: 5px;
         }
-        .header-text h5 {
+
+        .header-text .subtitle {
             color: #ffffff;
-            font-size: 15px;
-            margin-top: 3px;
-            font-weight: normal;
+            font-size: 16px;
         }
+
+
+
         main {
             max-width: 1000px;
+
             margin: 40px auto;
+
             padding: 0 20px;
         }
+
         section {
             background-color: white;
+
             padding: 25px;
+
             margin-bottom: 25px;
+
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+            box-shadow: 0 40px 15px rgba(0, 0, 0, 0.15);
         }
+
         h2 {
             color: #222;
+
             margin-bottom: 15px;
+
             font-size: 26px;
         }
+
         p {
             font-size: 16px;
             color: #555;
         }
+
         ul {
             padding-left: 25px;
         }
@@ -73,91 +101,299 @@
         li {
             margin-bottom: 8px;
         }
+
         .contact p {
             margin-bottom: 8px;
         }
+
+
+
+
         footer {
             background-color: #000;
+
             color: white;
+
             text-align: center;
+
             padding: 20px;
+
             margin-top: 40px;
         }
+
+        footer p {
+            color: white;
+            font-size: 14px;
+        }
+
+
+        .hover-btn {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            overflow: hidden;
+
+            padding: 10px 20px;
+
+            background: #450a0a;
+
+            color: #f87171;
+
+            border: 1px solid #f87171;
+            border-bottom: 4px solid #f87171;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+            font-weight: 500;
+
+            cursor: pointer;
+
+            outline: none;
+
+            transition: all 0.3s ease;
+
+            z-index: 1000;
+        }
+
+        .hover-btn::before {
+            content: "";
+
+            position: absolute;
+
+            top: -150%;
+            left: 0;
+
+            width: 320px;
+            height: 5px;
+
+            background: #f87171;
+
+            border-radius: 6px;
+
+            opacity: 0.5;
+
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+
+            transition: top 0.5s ease;
+
+            pointer-events: none;
+        }
+
+        .hover-btn:hover {
+            filter: brightness(1.5);
+
+            border-top: 4px solid #f87171;
+            border-bottom: 1px solid #f87171;
+        }
+
+        .hover-btn:hover::before {
+            top: 150%;
+        }
+
+        .hover-btn:active {
+            opacity: 0.75;
+        }
+
+
+
         @media (max-width: 600px) {
+
             header {
-                padding: 15px 20px;
+                padding: 20px;
             }
+
             header img {
-                width: 50px;
-                height: 50px;
+                width: 70px;
+                height: 70px;
             }
+
             .header-text h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
-            .header-text h5 {
-                font-size: 12px;
+
+            .header-text .subtitle {
+                font-size: 13px;
             }
+
             main {
                 margin-top: 25px;
             }
+
+            section {
+                padding: 20px;
+            }
+
+            .hover-btn {
+                right: 15px;
+                bottom: 15px;
+            }
         }
+        .marquee {
+        width: 100%;
+        overflow: hidden;
+        background: #000;
+        color: white;
+        padding: 15px 0;
+    }
+
+    .marquee-content {
+    display: flex;
+    width: max-content;
+    gap: 40px;
+
+    animation: marquee 15s linear infinite;
+}
+
+.marquee-content span {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
     </style>
+
 </head>
 
-<body style="background-color: grey">
 
-    <!-- HEADER -->
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+
+
     <header>
 
-        <img src="My Pic.png" alt="Profile Picture">
+        <img src="My Pic.png" alt="Manthan Patel">
 
         <div class="header-text">
+
             <h1>Manthan Patel</h1>
-            <h5>Student of Engineering | EC | Available for Internship</h5>
+
+            <p class="subtitle">
+                Student of Engineering | EC | Available for Internship
+            </p>
+
         </div>
 
     </header>
 
+
+
+
     <main>
 
+
         <section>
+
             <h2>About Me</h2>
+
             <p>
                 I am a student of engineering, specializing in Electronics and
                 Communication. I am passionate about technology and eager to gain
                 practical experience through internships.
             </p>
-        </section>
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming Languages: HTML, JavaScript</li>
-                <li>Web Development: HTML, CSS, JavaScript</li>
-                <li>Electronics: Circuit Design, Microcontrollers</li>
-            </ul>
+
         </section>
 
+
+
+
+        <section>
+
+            <h2>Skills</h2>
+
+            <ul>
+
+                <li>
+                    Programming Languages: HTML, JavaScript
+                </li>
+
+                <li>
+                    Web Development: HTML, CSS, JavaScript
+                </li>
+
+                <li>
+                    Electronics: Circuit Design, Microcontrollers
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
         <section class="contact">
+
             <h2>Contact</h2>
 
             <p>
-                <strong>Email:</strong> your-email@example.com
+                <strong>Email:</strong>
+                abc@example.com
             </p>
 
             <p>
-                <strong>Phone:</strong> +91 1234567890
+                <strong>Phone:</strong>
+                +91 1234567890
             </p>
 
             <p>
-                <strong>Location:</strong> Gujarat, India
+                <strong>Location:</strong>
+                Gujarat, India
             </p>
+
         </section>
+        <div class="marquee">
+    <div class="marquee-content" style="width: 100%;">
+        <span>WEB DESIGN</span>
+        <span>✦</span>
+        <span>DIGITAL MARKETING</span>
+        <span>✦</span>
+        <span>FRONT-END DEVELOPMENT</span>
+        <span>✦</span>
+
+        <!-- Duplicate for seamless loop -->
+        <span>WEB DESIGN</span>
+        <span>✦</span>
+        <span>DIGITAL MARKETING</span>
+        <span>✦</span>
+        <span>FRONT-END DEVELOPMENT</span>
+        <span>✦</span>
+    </div>
+</div>
 
     </main>
 
+
+
     <footer>
-        <p>© 2026 Manthan Patel. All Rights Reserved.</p>
+
+        <p>
+            Terms & Conditions | Privacy Policy | © 2026 Manthan Patel
+        </p>
+
     </footer>
+
+
+
+    <button class="hover-btn">
+        Hier Me
+    </button>
+
+
+
 
 </body>
 
